@@ -5,3 +5,7 @@ from django.conf import settings
 def homepage(request):
     restaurant_name = settings.restaurant_name
     return render(request, "index.html", {"restaurant_name": restaurant_name})
+
+def about(request):
+    restaurant_name = settings.restaurant_name
+    return render(request, "about.html", {"restaurant_name": restaurant_name})
