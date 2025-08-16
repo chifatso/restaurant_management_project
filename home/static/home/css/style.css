@@ -1,0 +1,59 @@
+/* Navbar */
+.navbar {
+    background-color: #8B0000 !important;
+    padding: 15px;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Main Section */
+main {
+    background-color: #fff3e0; /*Light orange background*/
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-top: 40px; /*add breathing space below navbar*/
+
+}
+
+main h1 {
+    color: #d84315;
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+main p.lead {
+    color: #5d4037;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/*Buttons*/
+.btn-primary {
+    background-color: #ff5722;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #e64a19; /*darker orange on hover*/
+
+}
+
+/*Footer*/
+footer {
+    background-color: #8B0000 !important;
+    margin-top: 50px;
+    padding: 15px 0;
+    color: white;
+
+}
