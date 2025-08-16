@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +12,17 @@
 <body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="background-color: #8B0000; padding: 15px;">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="{% url 'home' %}" style="font-size: 1.5rem; letter-spacing: 1px;">{{ restaurant_name }}</a>
+            <a class="navbar-brand fw-bold" href="{% url 'home' %}" style="font-size: 1.5rem; letter-spacing: 1px;">
+                <!--Small logo in the navbar -->
+                <img src="{% static 'home/images/logo.png'%}" alt = "Restaurant Logo" width = "40" height = "40" class = "me-2 rounded-circle">
+                {{ restaurant_name }}
+            </a>
         </div>
     </nav>
 
     <main class="container my-5" style="background-color: #fff3e0; padding: 50px; border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+        <!-- Big Logo at top of homepage -->
+        <img src="{% static 'home/images/logo.png'%}" alt="Restaurant Logo" class="img-fluid mb-4" style="max-width: 200px;">
         <h1 class="mb-4 text-primary" style="color: #d84315; font-family: 'Georgia', serif; font-size: 3rem; font-weight:bold;">Welcome {{ restaurant_name }} Management System</h1>
         <p class="lead" style="#5d4037; font-size: 1.2rem; margin-bottom: 30px;">Manage your orders, tables and menus efficiently.</p>
         <a href="{% url 'about' %}" class="btn btn-primary" style="background-color: #ff57722; border: none; padding: 12px 30px; font-size:1.5rem; letter-spacing:1px; color: white;">Get Started</a>
