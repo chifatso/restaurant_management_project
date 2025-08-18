@@ -26,3 +26,6 @@ def about(request):
     except DatabaseError:
         restaurant_name = settings.restaurant_name
     return render(request, "home/about.html", {"restaurant_name": restaurant_name})
+
+def reservations(request):
+    return render(request, "home/reservations.html")
