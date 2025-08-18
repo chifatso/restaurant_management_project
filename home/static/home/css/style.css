@@ -28,6 +28,11 @@ main h1 {
     margin-bottom: 20px;
 }
 
+main h1:hover {
+    color: #bf360c;
+    transition: color 0.3s ease-in-out;
+}
+
 main p.lead {
     color: #5d4037;
     font-size: 1.2rem;
@@ -57,3 +62,18 @@ footer {
     color: white;
 
 }
+
+/* Make the restaurant phone number stand out */
+.contact-phone {
+    font-size: 1.3rem;
+    color: #2e7d32; /* green for visibility */
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Improve logo spacing */
+img.img-fluid {
+    max-width: 250px; /*Prevent logo from being huge on big screens */
+    margin-bottom: 30px;
+}
+
