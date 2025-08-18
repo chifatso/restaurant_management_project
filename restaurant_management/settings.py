@@ -128,3 +128,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RESTAURANT_NAME = "Blues Restaurant"
+RESTAURANT_PHONE = "+260971234567"
