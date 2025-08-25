@@ -29,9 +29,9 @@
         &copy; {{ now|date:"Y" }} My Restaurant
         <!-- ^ automatically shows the current year -->
 
-        <!--Opening hours are hardcoded for now, later they can come from settings.py or DB-->
+        
         <div class="mt-2">
-            <small>Opening Hours: Mon-Fri: 11am-9pm, Sta-Sun: 10am-10pm</small>
+            <small>Opening Hours: {{restaurant_opening_hours}}</small>
         </div>
     
     </footer>
