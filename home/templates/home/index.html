@@ -13,6 +13,16 @@
     <!-- Phone number displayed here -->
     <p class="fw-bold contact-phone">Call us: {{ restaurant_phone }}</p>
 
+    <!--Search Bar Section -->
+    <form method="get" action="#" class="d-flex justify-content-center my-4">
+        {#
+            For now "action" is set to "#" meaning it doesn't submit anywhere.
+            Later, you can change this to point to your search view.
+        #}
+        <input type="text" name="q" class="form-control w-50 me-2" placeholder="Search menu items...">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
     <!-- Link to the About page -->
     <a href="{% url 'about' %}" class="btn btn-primary">Get Started</a>
 {% endblock %}
