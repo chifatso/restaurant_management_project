@@ -24,15 +24,24 @@
         <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
     <script>
-        document.getElementById("contactForm").addEventListenser("submit", function(event){
+        document.getElementById("contactForm").addEventListener("submit", function(event){
             //Get input values
             let name = document.getElementById("name").value.trim();
             let email = document.getElementById("email").value.trim();
+
+            //Regex pattern for a simple email check (user@domain.com)
+            let emailPattern = /^[^s@+@[^\s@+\.[^\s@]+$/;
 
             //Simple validation: check if empty
             if(name === "" || email === ""){
                 alert("Please fill in both your name and email before submitting.");
                 event.preventDefault(); //Stop from submitting
+            }
+
+            //Validation: Check if email format is valid 
+            if(!emailPattern.test(email)){
+                alert("Please enter a valid email address (e.g., user@example.com.");
+                event.preventDefault(); //Stop form from submitting
             }
 
         });
