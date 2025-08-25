@@ -2,18 +2,40 @@
 
 {% block content %}
 <div class="container my-5 text-center">
-    <!-- Page Heading -->
-    <h1 class="text-primary mb-4">Contact Us</h1>
+    <h1 class="mb-4 text-primary"> Contact Us</h1>
+    <p class="mb-4">We'd love to hear from you! Please fill out the form below.</p>
+    <form id="contactForm">
+        <!-- Name Field -->
+        <div class="mb-3">
+            <label for="name" class="form-label"> Name </label>
+            <input type="text" id="name" name = "name" class="form-control" placeholder="Your Name">
+        </div>
+        <!--Email Field -->
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Your Email">
+        </div>
+        <!-- Message Field -->
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" name = "message" class="form-control" rows="4" placeholder="Your Message"></textarea>
+        </div>
+        <!--Submit Button-->
+        <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+    <script>
+        document.getElementById("contactForm").addEventListenser("submit", function(event){
+            //Get input values
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
 
-    <!-- Hardcoded contact information -->
-    <p class="lead">We'd love to hear from you!</p>
-    <p><strong>Phone:</strong> +260977123456</p>
-    <p><strong>Email:</strong> info@myrestaurant.com</p>
-    <p><strong>Address:</strong> Plot 123, Cairo Road, Lusaka, Zambia</p>
+            //Simple validation: check if empty
+            if(name === "" || email === ""){
+                alert("Please fill in both your name and email before submitting.");
+                event.preventDefault(); //Stop from submitting
+            }
 
-    <!--Extra: Simple message -->
-    <p class="text-muted">
-        We'll get back to you as soon as possible.
-    </p>
-</div>
+        });
+    </script>
+
 {% endblock %}
