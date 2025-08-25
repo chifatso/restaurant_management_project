@@ -1,17 +1,19 @@
-{% extends "home/base.html" %}
+{% extends "home/base.html %}
 
 {% block content %}
-<h2 class="mb-4 text-primary">Leave Your Feedback</h2>
+<h2 class="mb-4 text-primary">You can leave your feedback here!</h2>
 
 <!-- Show error message if saving fails -->
 {% if error %}
     <div class="alert alert-danger">{{errors}}</div>
 {% endif %}
 
+<!--Validation form -->
 <form method="post" class="bg-white p-4 rounded shadow-sm">
     {% csrf_token %}
-    {{ form.as_p }} <!-- Django will auto-render fields with validation -->
+    {{ form.as_p }} <!--Django will auto-render fields with validation -->
 
     <button type="submit" class="btn btn-primary mt-3">Submit Feedback</button>
 </form>
+
 {% endblock %}
