@@ -32,3 +32,35 @@
         <!--Menu items will be injected here using javascript-->
     </div>
 {% endblock %}
+<!--Script to fetch menu items from API-->
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        //Call the API endpoint created
+        fetch("/api/menu/").then(response => response.json()).then(data => {
+            let menuList = document.getElementById("menu-list");
+
+            //Check if menu has items
+            if(data.length === 0){
+                menuList.innerHTML = "<p class = 'text-center text-muted'>No menu items available.</p>";
+                return;
+            }
+            //Loop through each menu item and create HTML
+            data.forEach(item => {
+                let card = <div class = "col-md-4 mb-3">
+                                <div class = "card shadow-sm h-100">
+                                    <div class = "card-body">
+                                        <h5 class = "card-title">${item.name}</h5>
+                                        <p class = "card-text">${item.description}</p>
+                                        <p class = "fw-bold">$${item.price}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        ;
+                    menuList.innerHTML += card; 
+            });
+        })
+        .catch(error => {
+            console.error("Error fetching menu:", error);
+        });
+    });
+</script>
