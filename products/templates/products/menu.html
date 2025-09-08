@@ -1,0 +1,20 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <h1 class = "text-center mb-4">Our Menu</h1>
+    <div class = "row">
+        {% for item in menu_items %}
+            <div class="col-md-4 mb-3">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{item.name}}</h5>
+                        <p class="card-text">{{item.description}}</p>
+                        <p class="fw-bold">${{item.price}}</p>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p class="text-center text-muted">No menu items available yet. </p>
+        {% endfor %}
+    </div>
+{% endblock %}
