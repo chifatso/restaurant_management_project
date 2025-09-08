@@ -40,6 +40,15 @@
             <iframe src="https://www.google.com/maps/embed/v1/place?q={{restaurant_address | urlencode}}&key=YOUR_GOOGLE_MAPS_API_KEY" allowfullscreen loading="lazy"></iframe>
         </div>
     </section>
+    <!--Contact Us Form-->
+    <section class="mt-5">
+        <h2 class="text-primary">Contact Us</h2>
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            {{ form.as_p }} <!--Renders the form fields-->
+            <button type="submit" class="btn btn-success">Submit</button>
+        </form>
+    </section>
 {% endblock %}
 <!--Script to fetch menu items from API-->
 <script>
