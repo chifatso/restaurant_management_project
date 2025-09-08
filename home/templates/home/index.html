@@ -31,6 +31,15 @@
     <div id="menu-list" class="row">
         <!--Menu items will be injected here using javascript-->
     </div>
+    <!--Location Section -->
+    <section class="mt-5 text-center">
+        <h2 class="text-primary">Find Us</h2>
+        <p class="fw-bold">{{ restaurant_address }}</p>
+        <!--Google Maps Embed -->
+        <div class="ration ratio-16x9">
+            <iframe src="https://www.google.com/maps/embed/v1/place?q={{restaurant_address | urlencode}}&key=YOUR_GOOGLE_MAPS_API_KEY" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </section>
 {% endblock %}
 <!--Script to fetch menu items from API-->
 <script>
