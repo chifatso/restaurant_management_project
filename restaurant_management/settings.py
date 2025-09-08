@@ -130,3 +130,4 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 RESTAURANT_NAME = "Bliss Restaurant"
 RESTAURANT_PHONE = "+260971234567"
+RESTAURANT_ADDRESS = "123 Main Street, Lusaka, Zambia"
