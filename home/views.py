@@ -20,10 +20,10 @@ def homepage(request):
         restaurant_name = settings.restaurant_name
         restaurant_phone = settings.restaurant_phone
 
-    return render(request, "home/index.html", {
-        "restaurant_name": restaurant_name,
-        "restaurant_phone": restaurant_phone,
-        })
+    return render(request, "home/index.html",{
+        "restaurant_name":restaurant_name,
+        "restaurant_phone":restaurant_phone
+    })
 
 def about(request):
     try:
