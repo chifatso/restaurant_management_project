@@ -21,4 +21,12 @@ class ContactSubmission(models.Model):
     submitted_at = models.DateTimeField(auto_now_add = True)
 
     def __str__(self):
+
         return f"{self.name} - {self.email}"
+
+class MenuCategory(models.Models):
+    name = models.CharField(max_length = 100, unique = True)
+
+    def __str__(self):
+        return self.name
+
