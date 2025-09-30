@@ -24,9 +24,10 @@ class ContactSubmission(models.Model):
 
         return f"{self.name} - {self.email}"
 
-class MenuCategory(models.Models):
+class MenuCategory(models.Model):
     name = models.CharField(max_length = 100, unique = True)
 
     def __str__(self):
         return self.name
+
 
