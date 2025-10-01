@@ -1,5 +1,6 @@
 from django.db import models
 from products.models import Menu 
+from .models import OrderStatus
 
 # Create your models here.
 class Order(models.Model):
@@ -19,6 +20,7 @@ class OrderStatus(models.Model):
     def __str__(self):
         return self.name
     
+
 
 
 
