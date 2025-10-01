@@ -19,7 +19,17 @@ class OrderStatus(models.Model):
 
     def __str__(self):
         return self.name
+
+class Coupon(models.Model):
+    code = models.CharField(max_length = 20, unique = True) # generate code
+    discount = models.DecimalField(max_digits = 5, decimal_places = 2) # discount amount
+    active = models.BooleanField(default = True) # Whether the coupon is still valid
+
+    def __str__(self):
+        return self.code
     
+    
+
 
 
 
