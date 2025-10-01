@@ -12,3 +12,11 @@ class Order(models.Model):
     def __str__(self):
         return f"Order #{self.id}-{self.customer_name}"
 
+class OrderStatus(models.Model):
+    name = models.CharField(max_length = 100, unique = True) # Stores the status name (must be unique e.g. "Pending", "Completed")
+
+    def __str__(self):
+        return self.name
+    
+
+
