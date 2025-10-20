@@ -6,6 +6,7 @@ from .models import OrderStatus
 class Order(models.Model):
     """Represents a customer order"""
     customer_name = models.CharField(max_length = 100) #Using CharField for limited character length
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='orders') 
     menu_item = models.ForeignKey(Menu, on_delete = models.CASCADE) #If Menu is deleted orders are deleted too.
     quantity = models.PositiveIntegerField(default = 1)
     status = models.ForeignKey(OrderStatus, on_delete = models.SET_NULL, null = True) # Links the order model to order status model
@@ -29,6 +30,7 @@ class Coupon(models.Model):
         return self.code
     
     
+
 
 
 
