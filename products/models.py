@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Menu(models.Model):
+class MenuItem(models.Model):
     """Represents a dish or Item available in the restaurant"""
     name = models.CharField(max_length=150) #CharField for limited characters
     description = models.TextField() #Textfield for longer text
@@ -9,6 +9,9 @@ class Menu(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) #Automatically updated when saved
 
+
+
     def __str__(self):
         #What will display in the admin panels dropdowns or lists
+
         return f"{self.name} - ${self.price}" 
