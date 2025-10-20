@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Menu 
 from .models import OrderStatus
+from django.utils import timezone
 
 # Create your models here.
 class Order(models.Model):
@@ -22,14 +23,21 @@ class OrderStatus(models.Model):
         return self.name
 
 class Coupon(models.Model):
-    code = models.CharField(max_length = 20, unique = True) # generate code
-    discount = models.DecimalField(max_digits = 5, decimal_places = 2) # discount amount
-    active = models.BooleanField(default = True) # Whether the coupon is still valid
+    """
+    Represents a discount coupon that users can apply to their orders.
+    """
+
+    code = models.CharField(max_length=50, unique=True)  # Coupon code, e.g., "WELCOME10"
+    discount_percentage = models.DecimalField(max_digits=4, decimal_places=2)  # e.g., 0.10 for 10% discount
+    is_active = models.BooleanField(default=True)  # Can be turned off by admin
+    valid_from = models.DateField()  # When the coupon becomes valid
+    valid_until = models.DateField()  # When the coupon expires
 
     def __str__(self):
-        return self.code
+        return f"{self.code} ({self.discount_percentage * 100}% off)"
     
     
+
 
 
 
