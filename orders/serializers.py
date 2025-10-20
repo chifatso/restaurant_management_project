@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Order, OrderItem
+from .models import Coupon
 
 # Nested serializer for the order items
 class OrderItemSerializer(serializers.ModelSerializer):
@@ -17,3 +18,12 @@ class OrderSerializer(serializers.ModelSerializer):
     class Meta:
         model = Order
         fields = ['id', 'created_at', 'total_price', 'items']
+
+class CouponSerializer(serializers.ModelSerializer):
+    """
+    Serializer for Coupon model.
+    Used to display coupon details after validation.
+    """
+    class Meta:
+        model = Coupon
+        fields = ['code', 'discount_percentage', 'valid_from', 'valid_until']
