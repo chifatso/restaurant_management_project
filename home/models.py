@@ -1,4 +1,5 @@
 from django.db import models
+from products.models import MenuItem
 
 # Create your models here.
 class Feedback(models.Model):
@@ -62,6 +63,17 @@ class DailySpecial(models.Model):
             # Log or handle any unexpected errors
             print("Error fetching random dailt special:", e)
             return None
+
+class NutritionalInformation(models.Model):
+    menu_item = models.ForeignKey(model = MenuItem, on_delete = models.CASCADE)
+    calories = models.IntegerField()
+    protein_grams = models.DecimalField(max_digits = 5, decimal_places = 2)
+    fat_grams = models. models.DecimalField(max_digits = 5, decimal_places = 2)
+    carbohydrate_grams = models.DecimalField(max_digits = 5, decimal_places = 2)
+
+    def __str__(self):
+        return f"{self.menu_item.name} - {self.calories}"
+
 
 
 
