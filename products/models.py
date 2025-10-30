@@ -7,6 +7,7 @@ class MenuItem(models.Model):
     description = models.TextField() #Textfield for longer text
     price = models.DecimalField(max_digits=10, decimal_places=2) #Like 199.22
     created_at = models.DateTimeField(auto_now_add=True)
+    is_featured = models.BooleanField(default = False)
     updated_at = models.DateTimeField(auto_now=True) #Automatically updated when saved
 
 
@@ -15,3 +16,4 @@ class MenuItem(models.Model):
         #What will display in the admin panels dropdowns or lists
 
         return f"{self.name} - ${self.price}" 
+
